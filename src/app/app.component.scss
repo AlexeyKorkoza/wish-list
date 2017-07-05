@@ -15,42 +15,53 @@ header {
   }
 }
 
-.games {
+main {
+  overflow: hidden;
   display: -webkit-box;
   display: flex;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  justify-content: center;
 
-  .card {
-    width: $widthCard;
-    text-align: center;
-    margin: 25px 25px 25px 0;
+  .games {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 75%;
 
-    .name {
-      font-weight: bold;
-    }
-
-    .price {
-      color: #ff46a9;
-    }
-
-    .basket {
-      font-size: 1.25em;
-      border-radius: 10px;
+    .card {
+      width: $widthCard;
       text-align: center;
-      background: $background-basket;
-      color: whitesmoke;
-      padding: 20px 0;
-      width: 100%;
-      cursor: pointer;
-      border: none;
-      outline: none;
+      margin: 25px 25px 25px 0;
 
-      &:hover {
-        background: #ffb31a;
+      .name {
+        font-weight: bold;
+      }
+
+      .price {
+        color: #ff46a9;
+      }
+
+      .basket {
+        font-size: 1.25em;
+        border-radius: 10px;
+        text-align: center;
+        background: $background-basket;
+        color: whitesmoke;
+        padding: 20px 0;
+        width: 100%;
+        cursor: pointer;
+        border: none;
+        outline: none;
+
+        &:hover {
+          background: #ffb31a;
+        }
       }
     }
+  }
+
+  aside {
+    width: 25%;
   }
 }
 

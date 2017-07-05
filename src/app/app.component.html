@@ -1,18 +1,23 @@
 <header>
     <h1>Wish list</h1>
 </header>
-<div class="games">
-    <div *ngFor="let card of games">
-        <div class="card">
-            <div class="cover">
-                <img src={{card.cover}} alt="card" />
+<main>
+    <div class="games">
+        <div *ngFor="let card of games; let index = index">
+            <div class="card">
+                <div class="cover">
+                    <img src={{card.cover}} alt="card"/>
+                </div>
+                <p class="name">{{card.name}}</p>
+                <p class="price">Price: {{card.price}}</p>
+                <button (click)="add(card)" class="basket">Add to Basket</button>
             </div>
-            <p class="name">{{card.name}}</p>
-            <p class="price">Price: {{card.price}}</p>
-            <button class="basket">Add to Basket</button>
         </div>
     </div>
-</div>
+    <aside>
+        <app-wish-list [card]="card"></app-wish-list>
+    </aside>
+</main>
 <footer>
     <div class="container">
         <div class="footer-icons">

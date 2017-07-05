@@ -3,19 +3,23 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { WishListComponent } from './wish-list/wish-list.component';
 
-import { GameService } from './service/game.service';
+import { GameService } from './services/game.service';
+import { LocalStorageService } from './services/local-storage.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WishListComponent
   ],
   imports: [
     BrowserModule,
     HttpModule
   ],
   providers: [
-    GameService
+    GameService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })

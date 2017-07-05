@@ -1,0 +1,10 @@
+<div class="wish-list">
+    <h1>Wish-list({{list.length}})</h1>
+    <ul>
+        <li *ngFor="let item of list">
+            <span>{{item.name}}</span>
+            <i class="fa fa-times" aria-hidden="true" (click)="remove(item.id)"></i>
+        </li>
+    </ul>
+    <p>Total sum is: <span class="sum">{{sum}}</span></p>
+</div>

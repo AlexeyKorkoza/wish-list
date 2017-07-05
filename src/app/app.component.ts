@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GameService } from './service/game.service';
+import { GameService } from './services/game.service';
 import { Game } from './model/game.model';
 
 @Component({
@@ -11,6 +11,7 @@ import { Game } from './model/game.model';
 export class AppComponent implements OnInit {
 
   games: Game [];
+  card: Game;
 
   constructor(private gameService: GameService) {}
 
@@ -20,5 +21,9 @@ export class AppComponent implements OnInit {
           this.games = data;
         }
     )
+  }
+
+  add(card: Game) {
+    this.card = card;
   }
 }
