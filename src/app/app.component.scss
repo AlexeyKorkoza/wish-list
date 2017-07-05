@@ -1,0 +1,87 @@
+@import '../_variables.scss';
+
+header {
+  background: $background-header;
+  height: 90px;
+  padding-left: 20px;
+
+  h1 {
+    display: block;
+    margin: 0;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 2.5em;
+    color: white;
+  }
+}
+
+.games {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  justify-content: center;
+
+  .card {
+    width: $widthCard;
+    text-align: center;
+    margin: 25px 25px 25px 0;
+
+    .name {
+      font-weight: bold;
+    }
+
+    .price {
+      color: #ff46a9;
+    }
+
+    .basket {
+      font-size: 1.25em;
+      border-radius: 10px;
+      text-align: center;
+      background: $background-basket;
+      color: whitesmoke;
+      padding: 20px 0;
+      width: 100%;
+      cursor: pointer;
+      border: none;
+      outline: none;
+
+      &:hover {
+        background: #ffb31a;
+      }
+    }
+  }
+}
+
+footer {
+  background: $background-header;
+  margin-top: 20px;
+  width: 100%;
+  padding: 5px 0;
+
+  .container {
+    p {
+      font: 1.75em $font;
+      text-align: center;
+      color: white;
+    }
+
+    .footer-icons {
+      margin: 0 auto;
+      display: table;
+    }
+
+    .github i {
+      -webkit-transition: -webkit-transform 0.4s;
+      transition: transform 0.4s;
+      color: orange;
+
+      &:hover {
+        color: white;
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+      }
+    }
+  }
+}
