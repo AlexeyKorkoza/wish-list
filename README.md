@@ -24,7 +24,7 @@ JS: angular
 Test task "Wish list".
 
 Need to realize "wish list". A system should allow adding to the list games from the catalog, remove games from the list, automatically counting the amount added games in the list.
-In the application the layout you need to make (Responsive disagn, use preprocessors - by wishing). Should be the json file in which is the catalog of products with names, prices and covers. Fonts Ubuntu and Ubuntu Condensed connect from Google Fonts.
+In the application the layout you need to make (Responsive, use preprocessors - by wishing). Should be the json file in which is the catalog of products with names, prices and covers. Fonts Ubuntu and Ubuntu Condensed connect from Google Fonts.
 The catalog of games and wish list should be realize using javascript templates.
 Adding in the list is by click on the button "Add"( May realize this action also with help drag-n-drop).When added, the button should change on "In list", the amount should automatically counting in the list of games. The list must save in localstorage.
 
