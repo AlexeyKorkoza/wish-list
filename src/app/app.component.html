@@ -10,12 +10,17 @@
                 </div>
                 <p class="name">{{card.name}}</p>
                 <p class="price">Price: {{card.price}}</p>
-                <button (click)="add(card)" class="basket">Add to Basket</button>
+                <div *ngIf="card.checked">
+                    <button class="basket">Added</button>
+                </div>
+                <div *ngIf="!card.checked">
+                    <button (click)="add(card)" class="basket">Add to Basket</button>
+                </div>
             </div>
         </div>
     </div>
     <aside>
-        <app-wish-list [card]="card"></app-wish-list>
+        <app-wish-list (removeWishById)="removeWishById($event)" [card]="card"></app-wish-list>
     </aside>
 </main>
 <footer>

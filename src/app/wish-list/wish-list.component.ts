@@ -1,7 +1,7 @@
-import { Component, OnChanges, Input, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, Output, Input, SimpleChanges, EventEmitter } from '@angular/core';
 
-import { LocalStorageService } from '../services/local-storage.service';
 import { Game } from '../model/game.model';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-wish-list',
@@ -11,23 +11,33 @@ import { Game } from '../model/game.model';
 export class WishListComponent implements OnChanges {
 
   @Input() card;
+  @Output() removeWishById = new EventEmitter<String>();
   list: Game [] = [];
-  sum: Number = 0;
+  sum: number;
 
-  constructor(private LocalStorageService: LocalStorageService) {}
+  constructor(private localStorageService: LocalStorageService) {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['card'] && this.card !== undefined) {
-
-      if (this.LocalStorageService.addWishId(changes.card.currentValue.id)) {
-
-        this.list.push(changes.card.currentValue);
-
-        this.sum = this.list.reduce((result, item) => {
-          return Number(result) + Number(item.price);
-        }, 0)
-      }
+      this.addWish();
     }
+  }
+
+  remove (item: any, index: number) {
+    this.localStorageService.delWishId(+item.id);
+    this.removeWishById.emit(item.id);
+    this.sum = this.sum - item.price;
+    this.list.splice(index, 1);
+    if (this.sum === 0) {
+      this.localStorageService.delFullWish();
+    }
+  }
+
+  addWish() {
+    this.list.push(this.card);
+    this.sum = this.list.reduce((result, item) => {
+      return Number(result) + Number(item.price);
+    }, 0)
   }
 
 }

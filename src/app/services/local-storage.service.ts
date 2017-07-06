@@ -33,4 +33,8 @@ export class LocalStorageService {
         localStorage.setItem('wishes', JSON.stringify(wishes));
     }
 
+    delFullWish() {
+        localStorage.removeItem('wishes');
+    }
+
 }
